@@ -22,32 +22,32 @@ import react, { Component } from 'react';
 
 //4. object
 
-const person = {
-  name: 'Mosh',
-  walk() { },
-  talk() { },
-};
+// const person = {
+//   name: 'Mosh',
+//   walk() { },
+//   talk() { },
+// };
 
-person.talk();
-person.name = '';
+// person.talk();
+// person.name = '';
 
-const targetMember = 'name';
-person[targetMember.value] = 'John';
+// const targetMember = 'name';
+// person[targetMember.value] = 'John';
 
 //5. this keyword
 //6.Binding this
 
-const people = {
-  name: 'Misya',
-  walk() {
-    console.log(this);
-  }
-};
+// const people = {
+//   name: 'Misya',
+//   walk() {
+//     console.log(this);
+//   }
+// };
 
-people.walk();
+// people.walk();
 
-const walk = people.walk.bind(people);
-walk();
+// const walk = people.walk.bind(people);
+// walk();
 
 
 //7. Arrow functions
@@ -58,8 +58,8 @@ walk();
 // }
 
 //with single parameter
-const square = number => number * number;
-console.log(square(5));
+// const square = number => number * number;
+// console.log(square(5));
 
 
 //no parameter
@@ -68,64 +68,123 @@ console.log(square(5));
 // }
 //example
 
-const jobs = [
-  { id: 1, isActive: true },
-  { id: 2, isActive: true },
-  { id: 3, isActive: false },
-];
+// const jobs = [
+//   { id: 1, isActive: true },
+//   { id: 2, isActive: true },
+//   { id: 3, isActive: false },
+// ];
 
 // const activeJobs = jobs.filter(function (job) { return job.isActive; });
-const activeJobs = jobs.filter(job => job.isActive);
+// const activeJobs2 = jobs.filter(job => job.isActive);
+
+//examples
+
+//old style
+function sum(a, b) {
+  return a + b;
+}
+
+//arrow functions
+let sum2 = (a, b) => a + b
+
+
+//old style
+function isPositive(number) {
+  return number >= 0
+}
+
+//arrow functions
+let isPositive2 = number => number >= 0
+
+//old style
+function randomNumber() {
+  return Math.random
+}
+
+//arrow functions
+let randomNumber2 = () => Math.random
+
+//old style
+document.addEventListener('click', function () {
+  console.log('click')
+})
+
+//arrow functions
+document.addEventListener('click', () => console.log('click'))
+
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  printNameArrow() {
+    setTimeout(() => {
+      console.log('Arrow: ' + this.name)
+    }, 100)
+  }
+
+  printNameFunction() {
+    setTimeout(function () {
+      console.log('Function: ' + this.name)
+    }, 100)
+  }
+
+}
+
+let person = new Person('Misya')
+person.printNameArrow()
+person.printNameFunction()
+
 
 //8. Arrow functions and this
 
-const p = {
-  talk() {
-    var self = this;
-    setTimeout(() => {
-      console.log("this", this);
-    }, 1000);
-  }
-};
+// const p = {
+//   talk() {
+//     var self = this;
+//     setTimeout(() => {
+//       console.log("this", this);
+//     }, 1000);
+//   }
+// };
 
-p.talk();
+// p.talk();
 
 //9. Arrow.map() - to render list
 
-const colors = ["red", "green", "blue"];
-const items = colors.map(color => `<li>${color}</li>`);
-console.log(items);
+// const colors = ["red", "green", "blue"];
+// const items = colors.map(color => `<li>${color}</li>`);
+// console.log(items);
 
 //10. Object Destructuring
 
-const address = {
-  street: '',
-  city: '',
-  country: '',
-}
+// const address = {
+//   street: '',
+//   city: '',
+//   country: '',
+// }
 
-const { street, city, country } = address; // call all
-const { street: st } = address; //call as diff name
+// const { street, city, country } = address; // call all
+// const { street: st } = address; //call as diff name
 
 //11. Spread Operator
 
 //for array
-const first = [1, 2, 3];
-const second = [4, 5, 6];
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
 
-const combined = [...first, 'a', ...second];
-console.log(combined);
+// const combined = [...first, 'a', ...second];
+// console.log(combined);
 
-const clone = [...first];
-console.log(first);
-console.log(clone);
+// const clone = [...first];
+// console.log(first);
+// console.log(clone);
 
 //for object
-const firstObj = { name: 'Misya' };
-const secondObj = { job: 'Programmer' };
+// const firstObj = { name: 'Misya' };
+// const secondObj = { job: 'Programmer' };
 
-const combinedObj = { ...firstObj, ...secondObj, location: 'PJ' };
-console.log(combinedObj);
+// const combinedObj = { ...firstObj, ...secondObj, location: 'PJ' };
+// console.log(combinedObj);
 
 //12. Classes
 

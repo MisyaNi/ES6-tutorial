@@ -1,6 +1,6 @@
 import { Ppl } from './ppl';
 
-export function promote() { }
+// export function promote() { }
 
 export default class Teacher extends Ppl {
 
